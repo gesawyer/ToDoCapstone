@@ -1,0 +1,25 @@
+﻿@model List<Tasks>
+
+@foreach (Tasks t in Model)
+{
+    <h4>Task: @t.TaskName</h4>
+    <h4>Id: @t.Id</h4>
+    <h4>Task owner: @t.Owner</h4>
+    <h4>Due date: @t.DueDate</h4>
+    <h4>Is Completed: @t.Completed</h4>
+    <a asp-action="Delete" asp-controller="ToDo" asp-route-Id="@t.Id">
+        <button>
+            Delete
+        </button>
+    </a>
+    <a asp-action="Update" asp-controller="ToDo" asp-route-Id="@t.Id">
+        <button>
+            Edit @t.TaskName
+        </button>
+        
+    </a>
+    <br />
+}
+
+
+<a asp-action="Create" asp-controller="ToDo">Add a new task to the database</a>

@@ -1,0 +1,10 @@
+﻿@model List<Tasks>
+
+@foreach (Tasks c in Model )
+ {
+    <h2>Name: @c.TaskName</h2>
+    <h2>Is completed: @c.Completed</h2>
+    <br />
+ }
+
+

@@ -1,0 +1,29 @@
+﻿@Model Tasks
+
+<form method="post">
+    <label>Id: @Model.Id</label>
+    <br />
+
+    <label>Task: </label>
+    <input type="text" name="TaskName" value="@Model.TaskName" />
+    <br />
+    <label>Due date</label>
+    <input type="date" name="DueDate" value=" =@Model.DueDate" readonly />
+    <br/>
+    <label>Is Completed</label>
+    <br />
+    @if (Model.Completed == true)
+    {
+        <label>Yes:</label><input type="radio" name="Completed" value="yes" required checked />
+        <label>No:</label><input type="radio" name="Completed" value="no" required />
+    }
+    else
+    {
+        <label>Yes:</label><input type="radio" name="Completed" value="yes" required />
+        <label>No:</label><input type="radio" name="Completed" value="no" required checked />
+    }
+
+    <br />
+    <br />
+    <input type="submit" value="Update" />
+</form> 

@@ -1,0 +1,17 @@
+﻿@model Tasks
+
+    <form method="post" asp-route-Id="Id" asp-action="Delete" asp-controller="ToDo">
+        <label>Id: </label>
+        <input type="number" name="Id" value="@Model.Id" readonly />
+        <br />
+        <label>Name: </label>
+        <input type="text" name="Name" value="@Model.TaskName" readonly />
+        <br />
+
+        <p>Do you wish to delete this entry?</p>
+        <input type="submit" value="Yes" />
+    </form>
+
+    <a asp-action="Index" asp-controller="ToDo">
+        <button>No</button>
+    </a>
